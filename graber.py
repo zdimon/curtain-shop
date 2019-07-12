@@ -32,10 +32,13 @@ def save_goods(url,category):
         link = product.find('div',{"class": "inner_cart_button"}).find('a').get('href')
         # сохраняем позицию
         save_position(link,path)
-    sys.exit('done')
+    #sys.exit('done')
 
 def save_position(link,path):
-    r = requests.get(link)
+    try:
+        r = requests.get(link)
+    except:
+        return True
     with open('log.html','w') as f:
         f.write(r.text)
     soup = BeautifulSoup(r.text, 'html.parser')
@@ -67,9 +70,9 @@ meta_title_ru: %s
 meta_keywords_ru: %s
 meta_description_ru: %s
 is_published: true
-description_ru: |
-%s
-    ''' % (slugify(title),title,title,title,title,description)
+description_ru: 
+   "%s"
+''' % (slugify(title),title,title,title,title,description)
     # запись в файл
     with open(os.path.join(path,'meta.yml'),'w') as f:
         f.write(meta_info)        
