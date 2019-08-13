@@ -11,10 +11,10 @@ class SubcategoryAdmin(admin.ModelAdmin):
     
 
 class GoodAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'name_slug', 'subcategory']
 
 class ImageAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['image', 'image_tag', 'good']
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Subcategory,SubcategoryAdmin)
