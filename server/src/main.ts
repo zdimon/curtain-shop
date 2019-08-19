@@ -6,6 +6,8 @@ const app = express();
 import * as bodyParser from 'body-parser';
 import { GoodAPI } from './api/good';
 app.use(bodyParser.json()); 
+import * as cors from "cors";
+app.use(cors())
 
 const category_api = new CategoryAPI();
 const good_api = new GoodAPI();
