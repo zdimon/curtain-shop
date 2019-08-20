@@ -7,4 +7,19 @@ const pool = new Pool({
   port: 5432,
 })
 
+/*
+export default {
+  query(text, params){
+    return new Promise((resolve, reject) => {
+      pool.query(text, params)
+      .then((res) => {
+        resolve(res);
+      })
+      .catch((err) => {
+        reject(err);
+      })
+    })
+  }
+*/
+
 export default pool;

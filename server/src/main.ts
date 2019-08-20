@@ -16,9 +16,12 @@ app.delete("/category/delete/:id", category_api.delete);
 app.post("/category/create", category_api.post);
 app.put("/category/edit", category_api.put);
 
-app.get("/good/list/:page/:perpage", good_api.getList);
+app.get("/good/list/:page/:perpage/:category?", good_api.getList);
 app.get("/good/:id", good_api.getOne);
+app.get("/good/search/:key", good_api.search);
 
+app.post("/makeOrder", good_api.makeOrder);
+app.post("/deleteOrder", good_api.makeOrder);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
