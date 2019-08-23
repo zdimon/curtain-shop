@@ -16,6 +16,9 @@ import { ShorttextPipe } from './shorttext.pipe';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import {FormsModule} from '@angular/forms';
+import { AboutgoodComponent } from './detail/aboutgood.component';
+import { AboutvendorComponent } from './detail/aboutvendor.component';
+import { CommentComponent } from './detail/comment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {FormsModule} from '@angular/forms';
     SearchComponent,
     BasketComponent,
     DetailComponent,
-    ShorttextPipe
+    ShorttextPipe,
+    AboutgoodComponent,
+    AboutvendorComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
